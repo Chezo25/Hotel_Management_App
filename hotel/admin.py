@@ -3,4 +3,4 @@ from .models import Room
 
 # Register your models here.
 
-admin.site.register
+admin.site.register(Room)
