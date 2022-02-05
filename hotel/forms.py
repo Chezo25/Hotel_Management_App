@@ -8,4 +8,6 @@ class AvailableForm(forms.Form):
         ('KIN', 'KING'),
         ('QUE','QUEEN'),
     )
-    room_categories = forms.ChoiceField(choices=ROOM_CATEGORIES)
+    room_categories = forms.ChoiceField(choices=ROOM_CATEGORIES, required=True)
+    check_in = forms.DateTimeField(required=True, input_formats=['%Y-%m-%d %H:%M',])
+    check_out = forms.DateTimeField(required=True, input_formats=['%Y-%m-%d %H:%M',])
