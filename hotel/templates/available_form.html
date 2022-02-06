@@ -8,7 +8,7 @@
   </head>
   <body>
     <form method="POST" action>
-      {{form.as_p}}
+      {{form.as_p}} {%csrf_token%}
       <button type="submit" name="">Book Room</button>
     </form>
   </body>
