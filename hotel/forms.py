@@ -1,13 +1,13 @@
 from django import forms
 
 class AvailableForm(forms.Form):
-    ROOM_CATEGORIES =(
-        ('YAC', 'AC'),
-        ('NAC', 'NON-AC'),
-        ('DEL', 'DELUXE'),
-        ('KIN', 'KING'),
-        ('QUE','QUEEN'),
-    )
-    room_categories = forms.ChoiceField(choices=ROOM_CATEGORIES, required=True)
+    # # ROOM_CATEGORIES =(
+    # #     ('YAC', 'AC'),
+    # #     ('NAC', 'NON-AC'),
+    # #     ('DEL', 'DELUXE'),
+    # #     ('KIN', 'KING'),
+    # #     ('QUE','QUEEN'),
+    # # )
+    # room_category = forms.ChoiceField(choices=ROOM_CATEGORIES, required=True)
     check_in = forms.DateTimeField(required=True, input_formats=['%Y-%m-%d %H:%M',])
     check_out = forms.DateTimeField(required=True, input_formats=['%Y-%m-%d %H:%M',])
