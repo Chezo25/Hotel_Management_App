@@ -1,6 +1,6 @@
 from django.shortcuts import render, HttpResponse
-from django.views.generic import ListView, FormView, View
-from django.urls import reverse
+from django.views.generic import ListView, DeleteView, View
+from django.urls import reverse, reverse_lazy
 from .models import Room, Booking 
 from .forms import AvailableForm
 from hotel.booking_functions.availability import check_availability
@@ -101,3 +101,8 @@ class RoomDetailView(View):
 #             return HttpResponse(booking)
 #         else:
 #             return HttpResponse('This category is not avaible')
+
+class CancelBookingView(DeleteView):
+    model = Booking
+    template_name = 'booking_cancel_view.html'
+    success_url = reverse_lazy('hotel:BookingList')
