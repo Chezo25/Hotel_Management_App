@@ -8,20 +8,12 @@ from hotel.booking_functions.availability import check_availability
 # Create your views here.
 
 def RoomListView(request):
-    room = Room.objects.all()[0]
-    room_categories = dict(room.ROOM_CATEGORIES)
-    room_values = room_categories.values()
-    room_list = []
     
-    for room_category in room_categories:
-        room = room_categories.get(room_category)
-        room_url = reverse('hotel:RoomDetailView', kwargs={
-                           'category': room_category})
-
-        room_list.append((room, room_url))
-    context = {
-        "room_list": room_list,
-    }
+    
+    
+   
+    
+    
     return render(request, 'room_list_view.html', context)
     
 class BookingList(ListView):
